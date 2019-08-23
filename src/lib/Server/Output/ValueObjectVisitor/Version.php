@@ -105,6 +105,9 @@ class Version extends ValueObjectVisitor
 
         $visitor->visitValueObject($versionInfo);
 
+        $generator->startValueElement('Thumbnail', $content->thumbnail);
+        $generator->endValueElement('Thumbnail');
+
         $generator->startHashElement('Fields');
         $generator->startList('field');
         foreach ($content->getFields() as $field) {
